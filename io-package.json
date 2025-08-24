@@ -1,0 +1,60 @@
+{
+  "common": {
+    "name": "elegoo-centauri",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "Initial release",
+        "de": "Erstveröffentlichung"
+      }
+    },
+    "title": "Elegoo Centauri Carbon",
+    "titleLang": {
+      "en": "Elegoo Centauri Carbon",
+      "de": "Elegoo Centauri Carbon"
+    },
+    "desc": {
+      "en": "Monitor and control your Elegoo Centauri Carbon 3D printer",
+      "de": "Überwachen und steuern Sie Ihren Elegoo Centauri Carbon 3D-Drucker"
+    },
+    "authors": [
+      "tholterhus <your.email@example.com>"
+    ],
+    "keywords": [
+      "elegoo",
+      "3d print",
+      "centauri"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "elegoo.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/tholterhus/iobroker.elegoo-centauri/main/admin/elegoo.png",
+    "readme": "https://github.com/tholterhus/iobroker.elegoo-centauri/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "iot-systems",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "tab": "materialize"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ]
+  },
+  "native": {
+    "printerIp": "192.168.178.34",
+    "wsPort": 3030,
+    "camPort": 8080,
+    "pollInterval": 10,
+    "reconnectInterval": 60,
+    "autoDiscovery": false
+  },
+  "objects":,
+  "instanceObjects":
+}
