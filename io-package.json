@@ -55,6 +55,4 @@
     "reconnectInterval": 60,
     "autoDiscovery": false
   },
-  "objects":,
-  "instanceObjects":
 }
