@@ -1,3 +1,5 @@
+'use strict';
+
 const utils = require('@iobroker/adapter-core');
 const MonitoringHandler = require('./lib/monitoring');
 const ControlHandler = require('./lib/control');
@@ -16,7 +18,10 @@ class ElegooCentauri extends utils.Adapter {
 
         // Initialize monitoring and control handlers
         this.monitoring = new MonitoringHandler(this);
-        this.control = new ControlHandler(this, this.monitoring.getWebSocketClient());
+        this.control = new ControlHandler(this);
+
+        // Pass the WebSocket client getter to the control handler for robust access
+        this.control.setWsClientGetter(() => this.monitoring.getWebSocketClient());
 
         // Connect to the printer
         this.monitoring.connect();
@@ -28,6 +33,7 @@ class ElegooCentauri extends utils.Adapter {
     onUnload(callback) {
         try {
             this.monitoring.disconnect();
+            this.log.info('Cleaned up everything...');
             callback();
         } catch (e) {
             callback();
@@ -94,4 +100,10 @@ class ElegooCentauri extends utils.Adapter {
         await this.setObjectNotExistsAsync('camera', { type: 'channel', common: { name: 'Camera' } });
         await this.setObjectNotExistsAsync('camera.streamUrl', { type: 'state', common: { name: 'Camera Stream URL', type: 'string', role: 'url.video', read: true, write: false, def: '' } });
     }
+}
+
+if (require.main === module) {
+    // @ts-ignore
+    const { adapter } = require('@iobroker/adapter-core');
+    new ElegooCentauri(adapter);
 }

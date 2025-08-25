@@ -54,5 +54,7 @@
     "pollInterval": 10,
     "reconnectInterval": 60,
     "autoDiscovery": false
-  }
+  },
+  "objects":,
+  "instanceObjects":
 }
