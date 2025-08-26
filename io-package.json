@@ -41,6 +41,12 @@
     "adminUI": {
       "tab": "materialize"
     },
+    "adminTab": {
+      "singleton": true,
+      "name": "Elegoo Centauri Carbon",
+      "link": "index_m.html",
+      "fa-icon": "print"
+    },
     "dependencies": [
       {
         "js-controller": ">=3.3.22"
@@ -54,5 +60,7 @@
     "pollInterval": 10,
     "reconnectInterval": 60,
     "autoDiscovery": false
-  }
+  },
+  "objects":,
+  "instanceObjects":
 }
