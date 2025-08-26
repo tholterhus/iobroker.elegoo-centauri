@@ -4,21 +4,11 @@ function load(settings, onChange) {
 
     // Populate the fields with values from the 'settings' object.
     // Default values are used if a value is not defined.
-    $('#printerIp').val(settings.printerIp |
-
-| '192.168.178.34');
-    $('#wsPort').val(settings.wsPort |
-
-| 3030);
-    $('#camPort').val(settings.camPort |
-
-| 8080);
-    $('#pollInterval').val(settings.pollInterval |
-
-| 10);
-    $('#reconnectInterval').val(settings.reconnectInterval |
-
-| 60);
+    $('#printerIp').val(settings.printerIp || '192.168.178.34');
+    $('#wsPort').val(settings.wsPort || 3030);
+    $('#camPort').val(settings.camPort || 8080);
+    $('#pollInterval').val(settings.pollInterval || 10);
+    $('#reconnectInterval').val(settings.reconnectInterval || 60);
     $('#autoDiscovery').prop('checked', settings.autoDiscovery === undefined? false : settings.autoDiscovery);
 
     // Register the onChange callback to react to changes.
