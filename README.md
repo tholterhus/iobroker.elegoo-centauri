@@ -1,3 +1,5 @@
+Here is the complete README.md file. You can copy and paste the content below directly into your README.md file.
+
 `# ioBroker.elegoo-centauri
 
 Elegoo Centauri adapter for ioBroker
